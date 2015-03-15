@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">LoadAnimationView</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="load_float_troops">TroopFloat</string>
+    <string name="load_alpha_scale">AlphaScale</string>
+
+</resources>
