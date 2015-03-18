@@ -15,7 +15,8 @@ public class MainActivity extends ActionBarActivity
 {
     private ImageView imgViewAlp;
     private FloatTroopsLoadView floatTroopsLoadView;
-    private Button btn_ft_tps,btn_ap_scal;
+    private RotateTrigonLoadView hitBallsView;
+    private Button btn_ft_tps,btn_ap_scal,btn_rotate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -26,12 +27,16 @@ public class MainActivity extends ActionBarActivity
         imgViewAlp = (ImageView)findViewById(R.id.im_alpha_scale);
         floatTroopsLoadView =
                 (FloatTroopsLoadView)findViewById(R.id.view_float_troops);
+        hitBallsView =
+                (RotateTrigonLoadView)findViewById(R.id.view_hit_balls);
 
         btn_ft_tps = (Button)findViewById(R.id.btn_float_troops);
         btn_ap_scal = (Button)findViewById(R.id.btn_alpha_scale);
+        btn_rotate = (Button)findViewById(R.id.btn_rotate_trigon);
 
         btn_ft_tps.setOnClickListener(new MyOnClickListener());
         btn_ap_scal.setOnClickListener(new MyOnClickListener());
+        btn_rotate.setOnClickListener(new MyOnClickListener());
 
     }
 
@@ -43,22 +48,30 @@ public class MainActivity extends ActionBarActivity
         {
             if(v == btn_ft_tps)
             {
+                hitBallsView.setVisibility(View.GONE);
                 imgViewAlp.setVisibility(View.GONE);
                 floatTroopsLoadView.setVisibility(View.VISIBLE);
                 floatTroopsLoadView.startAnimation();
             }
             else if(v == btn_ap_scal)
             {
+                hitBallsView.setVisibility(View.GONE);
                 floatTroopsLoadView.setVisibility(View.GONE);
                 imgViewAlp.setVisibility(View.VISIBLE);
                 setAlphaScaleLoad(imgViewAlp);
             }
+            else if(v == btn_rotate)
+            {
+                imgViewAlp.setVisibility(View.GONE);
+                floatTroopsLoadView.setVisibility(View.GONE);
+                hitBallsView.setVisibility(View.VISIBLE);
 
+            }
 
         }
     }
 
-    //设置透明度渐变和大小渐变同时发生的动画
+    //设置透明度渐变和大小渐变同时启动的动画
     private void setAlphaScaleLoad(View view)
     {
         ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(view,"alpha",0.0f,1.0f);
@@ -81,6 +94,7 @@ public class MainActivity extends ActionBarActivity
 
         AnimatorSet set = new AnimatorSet();
         ObjectAnimator[] animators = {animatorX,animatorY,objectAnimator};
+        //playTogether() 设置同时启动数组中的所有动画
         set.playTogether(animators);
         set.start();
 

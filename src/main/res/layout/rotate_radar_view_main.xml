@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="#222222"
+    >
 
     <ImageView
-        android:id="@+id/im_rotate_rd_main"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:src="@drawable/round_point"
-        android:layout_toLeftOf="@+id/imTwo_float_troops"
+        android:id="@+id/im_rotate_rd_center"
+        android:layout_width="60dp"
+        android:layout_height="70dp"
+        android:src="@drawable/loading_trigon"
         android:layout_centerInParent="true"
+        android:scaleType="fitCenter"
         />
+
+
 
 
 

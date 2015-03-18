@@ -6,5 +6,6 @@
 
     <string name="load_float_troops">TroopFloat</string>
     <string name="load_alpha_scale">AlphaScale</string>
+    <string name="load_rotate">RotateTgon</string>
 
 </resources>

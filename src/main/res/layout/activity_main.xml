@@ -27,6 +27,12 @@
             android:layout_height="wrap_content"
             android:text="@string/load_alpha_scale"
             />
+        <Button
+            android:id="@+id/btn_rotate_trigon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/load_rotate"
+            />
     </LinearLayout>
 
     <RelativeLayout
@@ -47,6 +53,12 @@
             android:layout_height="30dp"
             android:src="@drawable/round_point"
             android:layout_centerInParent="true"
+            android:visibility="gone"
+            />
+        <com.alextam.android.loadanimationview.RotateTrigonLoadView
+            android:id="@+id/view_hit_balls"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:visibility="gone"
             />
 
